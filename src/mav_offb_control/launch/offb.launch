@@ -1,0 +1,10 @@
+<launch>
+
+    <arg name="log_destination" value="$(find mav_offb_control)/logs" />
+
+    <node name="offb_node" pkg="mav_offb_control" type="mav_offb_control_node"/>
+    <node name="rosbag_record" pkg="rosbag" type="record"
+          args="--split --duration=10m -a -o $(arg log_destination)/LOG"
+          output="screen" />
+
+</launch>
