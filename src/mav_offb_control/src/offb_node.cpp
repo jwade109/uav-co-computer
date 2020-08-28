@@ -25,6 +25,11 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "offb_node");
     ros::NodeHandle nh;
+
+    ros::spin();
+
+    return 0;
+
     // subscribers
     ros::Subscriber rc_in_sub = nh.subscribe<mavros_msgs::RCIn>("mavros/rc/in", 100, rcin_cb);
     ros::Subscriber manual_in_sub = nh.subscribe<mavros_msgs::ManualControl>("mavros/manual_control/control", 100, manual_cb);
