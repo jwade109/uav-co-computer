@@ -41,7 +41,7 @@ int main(int argc, char **argv)
     ros::Publisher actuator_pub = nh.advertise<mavros_msgs::ActuatorControl>("mavros/actuator_control", 100);
 
     //the setpoint publishing rate MUST be faster than 2Hz
-    ros::Rate rate(500.0);
+    ros::Rate rate(50);
 
     // wait for FCU connection
     while(ros::ok() && !current_state.connected){
